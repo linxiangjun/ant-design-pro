@@ -70,6 +70,13 @@ const footerRender: BasicLayoutProps['footerRender'] = (_, defaultDom) => {
   );
 };
 
+// 测试eslint和prettier
+const testLinter = function() {
+  console.warn(
+    'pre-commit中要求function和括号之间要有空格，而prettier会自动去掉空格，导致提交失败',
+  );
+};
+
 const BasicLayout: React.FC<BasicLayoutProps> = props => {
   const { dispatch, children, settings } = props;
   /**
@@ -96,6 +103,8 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
       type: 'global/changeLayoutCollapsed',
       payload,
     });
+
+  testLinter();
 
   return (
     <ProLayout
